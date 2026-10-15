@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>certamente é o vypeee</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-symbol">&lt;/&gt;</span>
+      <span class="logo-text">vypeee</span>
+    </div>
+
+    <nav class="nav-container">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active" data-i18n="nav_home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav_about">Sobre</a></li>
+        <li><a href="#courses" class="nav-link" data-i18n="nav_courses">Cursos</a></li>
+        <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Divulgações</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-selector" id="lang-selector">
+        <button class="lang-btn" id="lang-toggle" type="button" aria-expanded="false" aria-controls="lang-dropdown">
+          <i class="fas fa-globe"></i>
+          <span id="current-lang">PT-BR</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <ul class="lang-dropdown" id="lang-dropdown" aria-hidden="true">
+          <li class="lang-item" data-lang="pt" role="button" tabindex="0"><span>🇧🇷</span> PT-BR</li>
+          <li class="lang-item" data-lang="en" role="button" tabindex="0"><span>🇺🇸</span> English</li>
+          <li class="lang-item" data-lang="es" role="button" tabindex="0"><span>🇪🇸</span> Español</li>
+        </ul>
+      </div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-code"></i> <span data-i18n="hero_badge">Game Hacker &amp; Web Developer</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-i18n="hero_greeting">Olá, eu sou</span> <span class="gradient-text">VypeX</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          Explorando memória, engenharia reversa e criação de cheats com precisão.
+        </p>
+        <div class="hero-cta">
+          <a href="#about" class="btn btn-primary"><span data-i18n="hero_btn1">Conheça-me</span> <i class="fas fa-arrow-down"></i></a>
+          <a href="#contact" class="btn btn-outline"><span data-i18n="hero_btn2">Contato</span> <i class="fas fa-paper-plane"></i></a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span></span>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="about_tag">Sobre mim</span>
+          <h2 class="section-title"><span data-i18n="about_title1">Quem é</span> <span class="gradient-text">VypeX</span>?</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card glass">
+            <div class="about-avatar"><i class="fas fa-gamepad"></i></div>
+            <p class="about-text" data-i18n="about_p1">
+              Meu nome é <strong>VypeX</strong> (ou apenas Vype), um apaixonado por <strong>game hacking</strong>, 
+              engenharia reversa e segurança de software. Trabalho manipulando memória de processos, analisando 
+              estruturas internas de jogos e desenvolvendo ferramentas personalizadas em <strong>C#</strong> e 
+              <strong>C++</strong> para estudo de vulnerabilidades e automação.
+            </p>
+            <p class="about-text" data-i18n="about_p2">
+              Além disso, desenvolvo <strong>websites modernos</strong> com <strong>HTML</strong> e <strong>CSS</strong>, 
+              criando interfaces limpas, animadas e responsivas. Uno as duas áreas para construir projetos únicos: 
+              sites para ferramentas de hacking ético e dashboards para cheats e utilitários.
+            </p>
+            <div class="about-highlights">
+              <div class="highlight-item"><i class="fas fa-terminal"></i> <span data-i18n="about_skill1">Game Hacking &amp; Reversing</span></div>
+              <div class="highlight-item"><i class="fas fa-code"></i> <span data-i18n="about_skill2">HTML, CSS, C#, C++</span></div>
+              <div class="highlight-item"><i class="fas fa-shield-halved"></i> <span data-i18n="about_skill3">Ética &amp; Estudo</span></div>
+            </div>
+          </div>
+          <div class="about-social glass">
+            <h3 data-i18n="about_social_title">Redes &amp; Contato</h3>
+            <ul class="social-list">
+              <li><a href="https://instagram.com/violentarei" target="_blank" rel="noopener" class="social-link"><i class="fab fa-instagram"></i><span>@violentarei</span><i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="https://github.com/dallashypy" target="_blank" rel="noopener" class="social-link"><i class="fab fa-github"></i><span>dallashypy</span><i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="https://wa.me/5491157806564" target="_blank" rel="noopener" class="social-link"><i class="fab fa-whatsapp"></i><span>+54 9 11 5780-6564</span><i class="fas fa-arrow-right"></i></a></li>
+              <li><a href="#" class="social-link" id="discord-copy" data-user="vypehxck"><i class="fab fa-discord"></i><span>vypehxck</span><i class="fas fa-copy"></i></a></li>
+            </ul>
+            <div class="discord-copied-msg" id="discord-msg" data-i18n="discord_copied">Discord copiado!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="courses_tag">Formação</span>
+          <h2 class="section-title"><span data-i18n="courses_title1">Cursos &amp;</span> <span class="gradient-text" data-i18n="courses_title2">Conquistas</span></h2>
+        </div>
+        <div class="courses-grid">
+          <div class="course-card glass">
+            <div class="course-icon"><i class="devicon-html5-plain colored"></i><i class="devicon-css3-plain colored"></i></div>
+            <h3 data-i18n="course_html_title">HTML e CSS</h3>
+            <p data-i18n="course_html_desc">Domínio da estruturação semântica e estilização moderna, incluindo Flexbox, Grid e animações responsivas.</p>
+            <div class="course-bar"><div class="bar-fill" data-width="95%"></div></div>
+            <span class="course-level" data-i18n="course_html_level">Avançado</span>
+          </div>
+          <div class="course-card glass">
+            <div class="course-icon"><i class="devicon-python-plain colored"></i></div>
+            <h3 data-i18n="course_python_title">Python</h3>
+            <p data-i18n="course_python_desc">Programação orientada a objetos, automação, manipulação de dados e desenvolvimento de scripts eficientes.</p>
+            <div class="course-bar"><div class="bar-fill" data-width="85%"></div></div>
+            <span class="course-level" data-i18n="course_python_level">Intermediário-Avançado</span>
+          </div>
+          <div class="course-card glass">
+            <div class="course-icon"><i class="fas fa-graduation-cap"></i></div>
+            <h3 data-i18n="course_ads_title">Análise e Desenvolvimento de Sistemas</h3>
+            <p data-i18n="course_ads_desc">Formação superior com foco em engenharia de software, banco de dados, metodologias ágeis e arquitetura de sistemas.</p>
+            <div class="course-bar"><div class="bar-fill" data-width="70%"></div></div>
+            <span class="course-level" data-i18n="course_ads_level">Cursando</span>
+          </div>
+          <div class="course-card glass">
+            <div class="course-icon"><i class="devicon-csharp-plain colored"></i></div>
+            <h3 data-i18n="course_csharp_title">C#</h3>
+            <p data-i18n="course_csharp_desc">Desenvolvimento de aplicações .NET, cheats, memory reading/writing, hooks e integração com jogos e APIs externas.</p>
+            <div class="course-bar"><div class="bar-fill" data-width="90%"></div></div>
+            <span class="course-level" data-i18n="course_csharp_level">Avançado</span>
+          </div>
+          <div class="course-card glass">
+            <div class="course-icon"><i class="devicon-cplusplus-plain colored"></i></div>
+            <h3 data-i18n="course_cpp_title">C++</h3>
+            <p data-i18n="course_cpp_desc">Programação de baixo nível, manipulação de memória, injeção de DLLs, hooks e desenvolvimento de cheats de alto desempenho.</p>
+            <div class="course-bar"><div class="bar-fill" data-width="88%"></div></div>
+            <span class="course-level" data-i18n="course_cpp_level">Avançado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="projects_tag">Divulgações</span>
+          <h2 class="section-title"><span data-i18n="projects_title1">Áreas que</span> <span class="gradient-text" data-i18n="projects_title2">sou dono</span></h2>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card glass">
+            <div class="project-logo">
+              <img src="cyber.webp" alt="Cyber Client" loading="lazy">
+            </div>
+            <h3>Cyber Client</h3>
+            <p data-i18n="project_cyber_desc">Client premium com recursos avançados, atualizações constantes e suporte dedicado.</p>
+            <div class="project-links">
+              <a href="https://cyberclient.centralcart.ai/" target="_blank" rel="noopener" class="project-link">
+                <i class="fas fa-cart-shopping"></i>
+                <span data-i18n="project_buy">Loja</span>
+              </a>
+              <a href="https://discord.gg/cyberclient" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-discord"></i>
+                <span>Discord</span>
+              </a>
+            </div>
+          </div>
+          <div class="project-card glass">
+            <div class="project-logo">
+              <img src="nologs.webp" alt="NoLogs" loading="lazy">
+            </div>
+            <h3>NoLogs</h3>
+            <p data-i18n="project_nologs_desc">Plataforma focada em privacidade e segurança, com ferramentas exclusivas e comunidade ativa.</p>
+            <div class="project-links">
+              <a href="https://nologs.squareweb.app/" target="_blank" rel="noopener" class="project-link">
+                <i class="fas fa-globe"></i>
+                <span data-i18n="project_site">Site</span>
+              </a>
+              <a href="https://discord.gg/nologs" target="_blank" rel="noopener" class="project-link">
+                <i class="fab fa-discord"></i>
+                <span>Discord</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="contact_tag">Vamos conversar</span>
+          <h2 class="section-title"><span data-i18n="contact_title1">Entre em</span> <span class="gradient-text" data-i18n="contact_title2">contato</span></h2>
+        </div>
+        <div class="contact-wrapper glass">
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> <a href="mailto:dallashycontact@gmail.com" class="contact-email">dallashycontact@gmail.com</a></p>
+            <p><i class="fas fa-globe"></i> <span data-i18n="contact_available">Disponível para projetos e colaborações.</span></p>
+          </div>
+          <div class="contact-buttons">
+            <a href="mailto:dallashycontact@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://instagram.com/violentarei" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://github.com/dallashypy" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://wa.me/5491157806564" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p data-i18n="footer_text">Desenvolvido por <strong>vypeee</strong></p>
+    </div>
+  </footer>
+
+  <audio id="bg-music" src="song.mp3" loop preload="auto"></audio>
+
+  <div id="music-control" class="music-control">
+    <div id="volume-panel" class="volume-panel" role="group" aria-label="Controle de volume">
+      <i class="fas fa-volume-low"></i>
+      <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.35" aria-label="Volume da música">
+      <i class="fas fa-volume-high"></i>
+    </div>
+    <button id="music-toggle" class="music-toggle" type="button" aria-label="Ligar/desligar música" aria-pressed="false" title="Clique: play/pause • Duplo clique ou botão direito: fixar volume">
+      <i class="fas fa-volume-xmark"></i>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
