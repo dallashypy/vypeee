@@ -473,17 +473,6 @@ header, main, footer { position: relative; z-index: 2; }
 .social-link i:last-child { font-size: 0.9rem; color: var(--text-secondary); }
 .social-link:hover i:last-child { color: var(--purple-glow); }
 
-.discord-copied-msg {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: var(--purple-glow);
-  opacity: 0;
-  transition: opacity 0.3s;
-  text-align: center;
-}
-
-.discord-copied-msg.show { opacity: 1; }
-
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
