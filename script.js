@@ -8,7 +8,7 @@ var translations = {
     about_p1: "Meu nome é <strong>VypeX</strong> (ou apenas Vype), um apaixonado por <strong>game hacking</strong>, engenharia reversa e segurança de software. Trabalho manipulando memória de processos, analisando estruturas internas de jogos e desenvolvendo ferramentas personalizadas em <strong>C#</strong> e <strong>C++</strong> para estudo de vulnerabilidades e automação.",
     about_p2: "Além disso, desenvolvo <strong>websites modernos</strong> com <strong>HTML</strong> e <strong>CSS</strong>, criando interfaces limpas, animadas e responsivas. Uno as duas áreas para construir projetos únicos: sites para ferramentas de hacking ético e dashboards para cheats e utilitários.",
     about_skill1: "Game Hacking & Reversing", about_skill2: "HTML, CSS, C#, C++", about_skill3: "Ética & Estudo",
-    about_social_title: "Redes & Contato", discord_copied: "Discord copiado!",
+    about_social_title: "Redes & Contato",
     courses_tag: "Formação", courses_title1: "Cursos &", courses_title2: "Conquistas",
     course_html_title: "HTML e CSS", course_html_desc: "Domínio da estruturação semântica e estilização moderna, incluindo Flexbox, Grid e animações responsivas.", course_html_level: "Avançado",
     course_python_title: "Python", course_python_desc: "Programação orientada a objetos, automação, manipulação de dados e desenvolvimento de scripts eficientes.", course_python_level: "Intermediário-Avançado",
@@ -32,7 +32,7 @@ var translations = {
     about_p1: "My name is <strong>VypeX</strong> (or just Vype), passionate about <strong>game hacking</strong>, reverse engineering, and software security. I work by manipulating process memory, analyzing internal game structures, and developing custom tools in <strong>C#</strong> and <strong>C++</strong> for vulnerability research and automation.",
     about_p2: "I also build <strong>modern websites</strong> using <strong>HTML</strong> and <strong>CSS</strong>, creating clean, animated, and responsive interfaces. I combine both areas to build unique projects: sites for ethical hacking tools and dashboards for cheats and utilities.",
     about_skill1: "Game Hacking & Reversing", about_skill2: "HTML, CSS, C#, C++", about_skill3: "Ethics & Research",
-    about_social_title: "Social & Contact", discord_copied: "Discord copied!",
+    about_social_title: "Social & Contact",
     courses_tag: "Education", courses_title1: "Courses &", courses_title2: "Achievements",
     course_html_title: "HTML and CSS", course_html_desc: "Mastery of semantic structuring and modern styling, including Flexbox, Grid, and responsive animations.", course_html_level: "Advanced",
     course_python_title: "Python", course_python_desc: "Object-oriented programming, automation, data manipulation, and efficient script development.", course_python_level: "Intermediate-Advanced",
@@ -56,7 +56,7 @@ var translations = {
     about_p1: "Mi nombre es <strong>VypeX</strong> (o simplemente Vype), apasionado por el <strong>game hacking</strong>, la ingeniería inversa y la seguridad del software. Trabajo manipulando la memoria de procesos, analizando estructuras internas de juegos y desarrollando herramientas personalizadas en <strong>C#</strong> y <strong>C++</strong> para el estudio de vulnerabilidades y automatización.",
     about_p2: "También desarrollo <strong>sitios web modernos</strong> con <strong>HTML</strong> y <strong>CSS</strong>, creando interfaces limpias, animadas y responsivas. Uno ambas áreas para construir proyectos únicos: sitios para herramientas de hacking ético y dashboards para cheats y utilidades.",
     about_skill1: "Game Hacking & Reversing", about_skill2: "HTML, CSS, C#, C++", about_skill3: "Ética & Estudio",
-    about_social_title: "Redes & Contacto", discord_copied: "¡Discord copiado!",
+    about_social_title: "Redes & Contacto",
     courses_tag: "Formación", courses_title1: "Cursos &", courses_title2: "Logros",
     course_html_title: "HTML y CSS", course_html_desc: "Dominio de la estructuración semántica y estilización moderna, incluyendo Flexbox, Grid y animaciones responsivas.", course_html_level: "Avanzado",
     course_python_title: "Python", course_python_desc: "Programación orientada a objetos, automatización, manipulación de datos y desarrollo de scripts eficientes.", course_python_level: "Intermedio-Avanzado",
@@ -407,24 +407,6 @@ function initAll() {
   setTimeout(updateActiveNav, 100);
   setTimeout(updateActiveNav, 500);
   setTimeout(updateActiveNav, 1500);
-
-  var discordLink = document.getElementById('discord-copy');
-  var discordMsg = document.getElementById('discord-msg');
-  if (discordLink && discordMsg) {
-    discordLink.onclick = function (e) {
-      e.preventDefault();
-      var username = discordLink.getAttribute('data-user');
-      function done() {
-        discordMsg.classList.add('show');
-        setTimeout(function () { discordMsg.classList.remove('show'); }, 2000);
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(username).then(done).catch(function () { alert('Discord: ' + username); });
-      } else {
-        alert('Discord: ' + username);
-      }
-    };
-  }
 
   var bars = document.querySelectorAll('.bar-fill');
   function animateBars() {
