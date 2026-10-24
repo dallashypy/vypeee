@@ -107,7 +107,6 @@ function applyLanguage(lang) {
     }
   }
 
-  // Atualiza o Typewriter se estiver na tela inicial
   if (document.getElementById('home').getBoundingClientRect().top <= window.innerHeight) {
     startTypewriter();
   }
@@ -144,7 +143,6 @@ function updateActiveNav() {
   }
 }
 
-// --- TYPEWRITER EFFECT ---
 var typewriterTimeout;
 function startTypewriter() {
   var el = document.getElementById('typewriter');
@@ -333,7 +331,6 @@ function initAll() {
   applyLanguage(currentLang);
   startTypewriter();
 
-  // --- Cursor Customizado ---
   var cursorDot = document.getElementById('cursor-dot');
   var cursorOutline = document.getElementById('cursor-outline');
   
@@ -357,7 +354,6 @@ function initAll() {
     });
   }
 
-  // --- Navbar e Idioma ---
   var langSelector = document.getElementById('lang-selector');
   var langToggle = document.getElementById('lang-toggle');
   var langDropdown = document.getElementById('lang-dropdown');
@@ -449,7 +445,6 @@ function initAll() {
   setTimeout(updateActiveNav, 500);
   setTimeout(updateActiveNav, 1500);
 
-  // --- Barras de Progresso ---
   var bars = document.querySelectorAll('.bar-fill');
   function animateBars() {
     var vh = window.innerHeight;
@@ -468,7 +463,6 @@ function initAll() {
   setTimeout(animateBars, 200);
   animateBars();
 
-  // --- Partículas ---
   var canvas = document.getElementById('particles-canvas');
   if (canvas && canvas.getContext) {
     var ctx = canvas.getContext('2d');
@@ -476,7 +470,6 @@ function initAll() {
     var height = 0;
     var drops = [];
     var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var pointer = { x: -1000, y: -1000, targetX: -1000, targetY: -1000, active: false };
     var purpleRain = ['rgba(139, 92, 246, 0.2)', 'rgba(167, 139, 250, 0.3)', 'rgba(196, 181, 253, 0.15)'];
 
     function resizeCanvas() {
@@ -546,7 +539,6 @@ function initAll() {
     window.addEventListener('resize', resizeCanvas, { passive: true });
   }
 
-  // --- Smooth Scroll ---
   var anchors = document.querySelectorAll('a[href^="#"]');
   for (var q = 0; q < anchors.length; q++) {
     anchors[q].addEventListener('click', function (e) {
@@ -564,7 +556,6 @@ function initAll() {
 
   initMusic();
 
-  // --- Barra de Progresso ---
   var progressBar = document.getElementById('scroll-progress');
   function updateProgressBar() {
     if (!progressBar) return;
@@ -576,7 +567,6 @@ function initAll() {
   window.addEventListener('scroll', updateProgressBar, { passive: true });
   updateProgressBar();
 
-  // --- Efeito 3D Tilt e Spotlight ---
   var tiltElements = document.querySelectorAll('.tilt-card');
 
   tiltElements.forEach(function (el) {
@@ -587,15 +577,13 @@ function initAll() {
       var x = e.clientX - rect.left;
       var y = e.clientY - rect.top;
 
-      // 3D Tilt
       var centerX = rect.width / 2;
       var centerY = rect.height / 2;
-      var rotateX = ((y - centerY) / centerY) * -8; // Mais sutil
+      var rotateX = ((y - centerY) / centerY) * -8;
       var rotateY = ((x - centerX) / centerX) * 8;
 
       el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
       
-      // Spotlight
       if (spotlight) {
         spotlight.style.setProperty('--mouse-x', x + 'px');
         spotlight.style.setProperty('--mouse-y', y + 'px');
