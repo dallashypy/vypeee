@@ -33,6 +33,7 @@ body {
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  cursor: none; /* Esconde o cursor padrão */
 }
 
 input, textarea, .contact-email, [contenteditable="true"] {
@@ -40,6 +41,60 @@ input, textarea, .contact-email, [contenteditable="true"] {
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
+}
+
+/* ============ BARRA DE PROGRESSO (NOVA) ============ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--indigo-primary), var(--purple-glow), #fff);
+  z-index: 9999;
+  box-shadow: 0 0 15px var(--purple-glow);
+  transition: width 0.1s ease-out;
+}
+
+/* ============ CURSOR CUSTOMIZADO ============ */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--purple-glow);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(139, 92, 246, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+/* Efeito de hover no cursor */
+body.hovering-interactive .cursor-outline {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(139, 92, 246, 0.1);
+  border-color: var(--purple-glow);
+}
+
+body.hovering-interactive .cursor-dot {
+  background-color: white;
 }
 
 #particles-canvas {
@@ -63,19 +118,71 @@ header, main, footer { position: relative; z-index: 2; }
   border: 1px solid var(--glass-border);
   border-radius: 1.5rem;
   box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden; /* Para o efeito 3D não quebrar */
 }
 
-/* ============ BARRA DE PROGRESSO ============ */
-.scroll-progress {
-  position: fixed;
+/* Efeito 3D nos cards */
+.tilt-card {
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Efeito de Brilho (Shine) nos botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  border: 1px solid transparent;
+  font-size: 1rem;
+  cursor: none; /* Mantém o cursor customizado */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
   top: 0;
-  left: 0;
-  width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--indigo-primary), var(--purple-glow));
-  z-index: 9999;
-  box-shadow: 0 0 12px var(--purple-glow);
-  transition: width 0.1s ease-out;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--indigo-primary), var(--purple-primary));
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.7);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--purple-primary);
+  color: var(--purple-glow);
+}
+
+.btn-outline:hover {
+  background: rgba(139, 92, 246, 0.12);
+  transform: translateY(-3px);
 }
 
 /* ============ NAVBAR ============ */
@@ -87,7 +194,7 @@ header, main, footer { position: relative; z-index: 2; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(10, 10, 18, 0.9);
+  background: rgba(10, 10, 18, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(139, 92, 246, 0.18);
   gap: 1rem;
@@ -139,6 +246,7 @@ header, main, footer { position: relative; z-index: 2; }
   font-size: 0.95rem;
   white-space: nowrap;
   position: relative;
+  cursor: none;
 }
 
 .nav-link:hover { color: var(--text-primary); }
@@ -189,7 +297,7 @@ header, main, footer { position: relative; z-index: 2; }
   border-radius: 30px;
   font-weight: 500;
   font-size: 0.9rem;
-  cursor: pointer;
+  cursor: none;
   transition: var(--transition);
   font-family: inherit;
 }
@@ -238,7 +346,7 @@ header, main, footer { position: relative; z-index: 2; }
   gap: 0.6rem;
   padding: 0.65rem 1rem;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: none;
   transition: var(--transition);
   font-size: 0.9rem;
   color: var(--text-primary);
@@ -264,14 +372,9 @@ header, main, footer { position: relative; z-index: 2; }
   font-family: inherit;
   display: none;
   font-size: 1.5rem;
-  cursor: pointer;
+  cursor: none;
   color: var(--text-primary);
   padding: 0.4rem 0.6rem;
-}
-
-.menu-toggle:focus-visible, .lang-btn:focus-visible, .nav-link:focus-visible, .lang-item:focus-visible {
-  outline: 2px solid var(--purple-glow);
-  outline-offset: 3px;
 }
 
 /* ============ HERO ============ */
@@ -344,58 +447,6 @@ header, main, footer { position: relative; z-index: 2; }
 }
 
 .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.9rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--transition);
-  border: 1px solid transparent;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #7c3aed, #6d28d9);
-  color: white;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.45);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s ease;
-  z-index: 1;
-}
-
-.btn-primary:hover::after { left: 100%; }
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.7);
-}
-
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--purple-primary);
-  color: var(--purple-glow);
-}
-
-.btn-outline:hover {
-  background: rgba(139, 92, 246, 0.12);
-  transform: translateY(-3px);
-}
 
 .hero-scroll {
   position: absolute;
@@ -504,6 +555,7 @@ header, main, footer { position: relative; z-index: 2; }
   text-decoration: none;
   color: var(--text-primary);
   transition: var(--transition);
+  cursor: none;
 }
 
 .social-link:hover { background: rgba(139, 92, 246, 0.12); border-color: var(--purple-primary); transform: translateX(5px); }
@@ -568,7 +620,6 @@ header, main, footer { position: relative; z-index: 2; }
   text-align: center;
   transition: var(--transition);
   position: relative;
-  overflow: hidden;
 }
 
 .project-card::before {
@@ -657,6 +708,7 @@ header, main, footer { position: relative; z-index: 2; }
   flex: 1 1 auto;
   justify-content: center;
   min-width: 0;
+  cursor: none;
 }
 
 .project-link i {
@@ -704,7 +756,7 @@ header, main, footer { position: relative; z-index: 2; }
 
 .contact-info i { color: var(--purple-primary); width: 24px; }
 
-.contact-email { color: var(--purple-glow); text-decoration: none; border-bottom: 1px dashed transparent; overflow-wrap: anywhere; }
+.contact-email { color: var(--purple-glow); text-decoration: none; border-bottom: 1px dashed transparent; overflow-wrap: anywhere; cursor: none; }
 .contact-email:hover { color: white; border-bottom-color: var(--purple-glow); }
 
 .contact-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -743,10 +795,9 @@ header, main, footer { position: relative; z-index: 2; }
   border: 1px solid rgba(139, 92, 246, 0.45);
   background: rgba(20, 20, 35, 0.75);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   color: var(--purple-glow);
   font-size: 1.15rem;
-  cursor: pointer;
+  cursor: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -782,11 +833,6 @@ header, main, footer { position: relative; z-index: 2; }
   100% { transform: scale(1.4); opacity: 0; }
 }
 
-.music-toggle:focus-visible {
-  outline: 2px solid var(--purple-glow);
-  outline-offset: 3px;
-}
-
 .volume-panel {
   pointer-events: none;
   opacity: 0;
@@ -798,7 +844,6 @@ header, main, footer { position: relative; z-index: 2; }
   padding: 0.7rem 1rem;
   background: rgba(20, 20, 35, 0.85);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(139, 92, 246, 0.4);
   border-radius: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(139, 92, 246, 0.25);
@@ -812,11 +857,7 @@ header, main, footer { position: relative; z-index: 2; }
   pointer-events: auto;
 }
 
-.volume-panel i {
-  color: var(--purple-glow);
-  font-size: 0.85rem;
-  flex-shrink: 0;
-}
+.volume-panel i { color: var(--purple-glow); font-size: 0.85rem; flex-shrink: 0; }
 
 #volume-slider {
   -webkit-appearance: none;
@@ -826,7 +867,7 @@ header, main, footer { position: relative; z-index: 2; }
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.12);
   outline: none;
-  cursor: pointer;
+  cursor: none;
   transition: filter 0.2s;
 }
 
@@ -839,13 +880,11 @@ header, main, footer { position: relative; z-index: 2; }
   background: var(--purple-glow);
   border: 2px solid #0f0f1c;
   box-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
-  cursor: pointer;
+  cursor: none;
   transition: transform 0.2s;
 }
 
-#volume-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
-}
+#volume-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
 
 #volume-slider::-moz-range-thumb {
   width: 14px;
@@ -854,31 +893,10 @@ header, main, footer { position: relative; z-index: 2; }
   background: var(--purple-glow);
   border: 2px solid #0f0f1c;
   box-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
-  cursor: pointer;
+  cursor: none;
 }
 
-#volume-slider::-moz-range-track {
-  height: 4px;
-  border-radius: 10px;
-  background: transparent;
-}
-
-/* ============ ANIMAÇÕES 3D TILT ============ */
-.glass {
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
-}
-
-.course-card, .project-card, .about-card, .about-social {
-  transition: transform 0.1s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  will-change: transform;
-}
-
-@media (hover: none) {
-  .course-card, .project-card, .about-card, .about-social {
-    transform: none !important;
-  }
-}
+#volume-slider::-moz-range-track { height: 4px; border-radius: 10px; background: transparent; }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 950px) {
@@ -908,10 +926,6 @@ header, main, footer { position: relative; z-index: 2; }
   .nav-actions { margin-left: auto; gap: 0.65rem; }
   .about-grid { grid-template-columns: minmax(0, 1fr); }
   .contact-wrapper { align-items: stretch; }
-}
-
-@media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -963,21 +977,11 @@ header, main, footer { position: relative; z-index: 2; }
   .project-link { width: 100%; }
 }
 
-@media (max-width: 360px) {
-  .navbar { padding: 0.75rem 0.65rem; }
-  .logo { font-size: 0.98rem; }
-  .lang-btn { font-size: 0.75rem; padding: 0.45rem; }
-  .lang-btn .fa-chevron-down { font-size: 0.6rem; }
-  .menu-toggle { font-size: 1.15rem; }
-  .hero-title { font-size: 1.75rem; }
-  .hero-cta { flex-direction: column; align-items: stretch; }
-  .hero-cta .btn { width: 100%; }
-  .contact-buttons { grid-template-columns: minmax(0, 1fr); }
-}
-
 @media (hover: none) {
-  .course-card:hover, .about-card:hover, .highlight-item:hover, .social-link:hover,
-  .btn-primary:hover, .btn-outline:hover, .project-card:hover, .project-link:hover { transform: none; }
+  .cursor-dot, .cursor-outline { display: none; }
+  body { cursor: auto; }
+  .btn, .nav-link, .lang-btn, .lang-item, .menu-toggle, .social-link, .project-link, .music-toggle, #volume-slider { cursor: pointer; }
+  .tilt-card { transform: none !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -987,6 +991,9 @@ header, main, footer { position: relative; z-index: 2; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  .cursor-dot, .cursor-outline { display: none; }
+  body { cursor: auto; }
+  .tilt-card { transform: none !important; }
 }
 
 img, svg, video, canvas { max-width: 100%; }
