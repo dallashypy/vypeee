@@ -553,6 +553,48 @@ function initAll() {
   }
 
   initMusic();
+
+  /* =========================================
+     NOVAS ANIMAÇÕES INTERATIVAS
+     ========================================= */
+
+  // 1. Barra de Progresso (Top)
+  var progressBar = document.getElementById('scroll-progress');
+  function updateProgressBar() {
+    if (!progressBar) return;
+    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var percent = (scrollY / docH) * 100;
+    progressBar.style.width = Math.min(100, Math.max(0, percent)) + '%';
+  }
+  window.addEventListener('scroll', updateProgressBar, { passive: true });
+  updateProgressBar(); // Inicializa
+
+  // 2. Efeito 3D Tilt
+  var tiltElements = document.querySelectorAll('.course-card, .project-card, .about-card, .about-social');
+
+  tiltElements.forEach(function (el) {
+    el.addEventListener('mousemove', function (e) {
+      var rect = el.getBoundingClientRect();
+      var x = e.clientX - rect.left; // x position within the element.
+      var y = e.clientY - rect.top;  // y position within the element.
+
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+
+      // Calcula a rotação (max 10 graus)
+      var rotateX = ((y - centerY) / centerY) * -10;
+      var rotateY = ((x - centerX) / centerX) * 10;
+
+      el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      el.style.boxShadow = `0 15px 35px rgba(139, 92, 246, 0.3)`;
+    });
+
+    el.addEventListener('mouseleave', function () {
+      el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+      el.style.boxShadow = ''; // Volta ao padrão do CSS
+    });
+  });
 }
 
 if (document.readyState === 'loading') {
