@@ -43,6 +43,20 @@ input, textarea, .contact-email, [contenteditable="true"] {
   user-select: text;
 }
 
+/* ============ ANIMAÇÃO DE REVEAL (ENTRAR/SAIR) ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ============ BACKGROUND GRID ============ */
 .bg-grid {
   position: fixed;
@@ -511,10 +525,9 @@ header, main, footer { position: relative; z-index: 2; }
   font-weight: 300;
 }
 
-/* CORREÇÃO DO GRID DE ÍCONES */
 .hero-tech-stack {
   display: flex;
-  flex-direction: row; /* Força ficar em linha */
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -739,7 +752,7 @@ header, main, footer { position: relative; z-index: 2; }
 .code-comment { color: #6b7280; font-style: italic; }
 .code-number { color: #fca5a5; }
 
-/* CORREÇÃO DAS REDES SOCIAIS */
+/* Redes Sociais */
 .social-row {
   padding: 1.5rem 2rem;
   display: flex;
@@ -756,7 +769,7 @@ header, main, footer { position: relative; z-index: 2; }
 
 .social-list-row {
   display: flex;
-  flex-direction: row; /* Força ficar em linha */
+  flex-direction: row;
   gap: 1rem;
   list-style: none;
   flex-wrap: wrap;
@@ -1131,7 +1144,6 @@ header, main, footer { position: relative; z-index: 2; }
   .hero { min-height: calc(88svh - 65px); padding: 4.5rem 1rem 5rem; }
   .hero-title { font-size: clamp(1.85rem, 8vw, 2.6rem); line-height: 1.15; }
   
-  /* Ajuste dos ícones no mobile */
   .hero-tech-stack { gap: 0.8rem; }
   .tech-icon { width: 40px; height: 40px; font-size: 1.4rem; }
   
@@ -1142,7 +1154,6 @@ header, main, footer { position: relative; z-index: 2; }
   .about-header { flex-direction: column; text-align: center; gap: 0.5rem; }
   .social-row { padding: 1.25rem; }
   
-  /* Ajuste das redes sociais no mobile */
   .social-list-row { flex-direction: column; width: 100%; align-items: center; }
   .social-link { width: 100%; justify-content: center; }
   
