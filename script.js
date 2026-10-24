@@ -2,7 +2,7 @@ var translations = {
   pt: {
     nav_home: "Home", nav_about: "Sobre", nav_courses: "Cursos", nav_projects: "Divulgações", nav_contact: "Contato",
     hero_badge: "Disponível para projetos", hero_greeting: "Olá, eu sou",
-    hero_subtitle: "Explorando memória, engenharia reversa e criação de cheats.",
+    hero_subtitle: "Just a Programmer",
     hero_btn1: "Conheça-me", hero_btn2: "Contato",
     about_tag: "Sobre mim", about_title1: "Quem é",
     about_p1: "Meu nome é <strong>VypeX</strong> (ou apenas Vype), um apaixonado por <strong>game hacking</strong>, engenharia reversa e segurança de software. Trabalho manipulando memória de processos, analisando estruturas internas de jogos e desenvolvendo ferramentas personalizadas em <strong>C#</strong> e <strong>C++</strong> para estudo de vulnerabilidades e automação.",
@@ -26,7 +26,7 @@ var translations = {
   en: {
     nav_home: "Home", nav_about: "About", nav_courses: "Courses", nav_projects: "Showcase", nav_contact: "Contact",
     hero_badge: "Available for projects", hero_greeting: "Hi, I'm",
-    hero_subtitle: "Exploring memory, reverse engineering, and crafting cheats.",
+    hero_subtitle: "Just a Programmer",
     hero_btn1: "Get to know me", hero_btn2: "Contact",
     about_tag: "About me", about_title1: "Who is",
     about_p1: "My name is <strong>VypeX</strong> (or just Vype), passionate about <strong>game hacking</strong>, reverse engineering, and software security. I work by manipulating process memory, analyzing internal game structures, and developing custom tools in <strong>C#</strong> and <strong>C++</strong> for vulnerability research and automation.",
@@ -50,17 +50,17 @@ var translations = {
   es: {
     nav_home: "Inicio", nav_about: "Sobre mí", nav_courses: "Cursos", nav_projects: "Divulgaciones", nav_contact: "Contacto",
     hero_badge: "Disponible para proyectos", hero_greeting: "Hola, soy",
-    hero_subtitle: "Explorando memoria, ingeniería inversa y creación de cheats.",
+    hero_subtitle: "Just a Programmer",
     hero_btn1: "Conóceme", hero_btn2: "Contacto",
     about_tag: "Sobre mí", about_title1: "¿Quién es",
     about_p1: "Mi nombre es <strong>VypeX</strong> (o simplemente Vype), apasionado por el <strong>game hacking</strong>, la ingeniería inversa y la seguridad del software. Trabajo manipulando la memoria de procesos, analizando estructuras internas de juegos y desarrollando herramientas personalizadas en <strong>C#</strong> y <strong>C++</strong> para el estudio de vulnerabilidades y automatización.",
     about_p2: "También desarrollo <strong>sitios web modernos</strong> con <strong>HTML</strong> y <strong>CSS</strong>, creando interfaces limpias, animadas y responsivas. Uno ambas áreas para construir proyectos únicos.",
     about_skill1: "Game Hacking", about_skill2: "Web Dev", about_skill3: "Ética & Estudio",
     about_social_title: "Redes & Contacto",
-    courses_tag: "Formación", courses_title1: "Cursos &", courses_title2: "Logros",
+    courses_tag: "Formação", courses_title1: "Cursos &", courses_title2: "Logros",
     course_html_title: "HTML y CSS", course_html_desc: "Dominio de la estructuración semántica y estilización moderna, incluyendo Flexbox, Grid y animaciones responsivas.", course_html_level: "Avanzado",
     course_python_title: "Python", course_python_desc: "Programación orientada a objetos, automatización, manipulación de datos y desarrollo de scripts eficientes.", course_python_level: "Intermedio-Avanzado",
-    course_ads_title: "Análisis y Desarrollo de Sistemas", course_ads_desc: "Formación superior con enfoque en ingeniería de software, bases de datos, metodologías ágiles y arquitectura de sistemas.", course_ads_level: "Cursando",
+    course_ads_title: "Análisis y Desarrollo de Sistemas", course_ads_desc: "Formação superior con enfoque en ingeniería de software, bases de datos, metodologías ágiles y arquitectura de sistemas.", course_ads_level: "Cursando",
     course_csharp_title: "C#", course_csharp_desc: "Desarrollo de aplicaciones .NET, cheats, lectura/escritura de memoria, hooks e integración con juegos y APIs externas.", course_csharp_level: "Avanzado",
     course_cpp_title: "C++", course_cpp_desc: "Programación de bajo nivel, manipulación de memoria, inyección de DLLs, hooks y desarrollo de cheats de alto rendimiento.", course_cpp_level: "Avanzado",
     projects_tag: "Divulgaciones", projects_title1: "Áreas que", projects_title2: "poseo",
@@ -543,7 +543,7 @@ function initAll() {
         ctx.globalAlpha = drop.alpha;
         ctx.lineWidth = 1;
         ctx.stroke();
-        if (!reducedMotion).
+        if (!reducedMotion) {
           drop.y += drop.speed;
           drop.x += drop.drift;
           if (drop.y > height + drop.length) {
