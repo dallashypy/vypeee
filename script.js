@@ -1,13 +1,13 @@
 var translations = {
   pt: {
     nav_home: "Home", nav_about: "Sobre", nav_courses: "Cursos", nav_projects: "Divulgações", nav_contact: "Contato",
-    hero_badge: "Game Hacker & Web Developer", hero_greeting: "Olá, eu sou",
-    hero_subtitle: "Explorando memória, engenharia reversa e criação de cheats com precisão.",
+    hero_badge: "Disponível para projetos", hero_greeting: "Olá, eu sou",
+    hero_subtitle: "Explorando memória, engenharia reversa e criação de cheats.",
     hero_btn1: "Conheça-me", hero_btn2: "Contato",
     about_tag: "Sobre mim", about_title1: "Quem é",
     about_p1: "Meu nome é <strong>VypeX</strong> (ou apenas Vype), um apaixonado por <strong>game hacking</strong>, engenharia reversa e segurança de software. Trabalho manipulando memória de processos, analisando estruturas internas de jogos e desenvolvendo ferramentas personalizadas em <strong>C#</strong> e <strong>C++</strong> para estudo de vulnerabilidades e automação.",
-    about_p2: "Além disso, desenvolvo <strong>websites modernos</strong> com <strong>HTML</strong> e <strong>CSS</strong>, criando interfaces limpas, animadas e responsivas. Uno as duas áreas para construir projetos únicos: sites para ferramentas de hacking ético e dashboards para cheats e utilitários.",
-    about_skill1: "Game Hacking & Reversing", about_skill2: "HTML, CSS, C#, C++", about_skill3: "Ética & Estudo",
+    about_p2: "Além disso, desenvolvo <strong>websites modernos</strong> com <strong>HTML</strong> e <strong>CSS</strong>, criando interfaces limpas, animadas e responsivas. Uno as duas áreas para construir projetos únicos.",
+    about_skill1: "Game Hacking", about_skill2: "Web Dev", about_skill3: "Ética & Estudo",
     about_social_title: "Redes & Contato",
     courses_tag: "Formação", courses_title1: "Cursos &", courses_title2: "Conquistas",
     course_html_title: "HTML e CSS", course_html_desc: "Domínio da estruturação semântica e estilização moderna, incluindo Flexbox, Grid e animações responsivas.", course_html_level: "Avançado",
@@ -25,13 +25,13 @@ var translations = {
   },
   en: {
     nav_home: "Home", nav_about: "About", nav_courses: "Courses", nav_projects: "Showcase", nav_contact: "Contact",
-    hero_badge: "Game Hacker & Web Developer", hero_greeting: "Hi, I'm",
-    hero_subtitle: "Exploring memory, reverse engineering, and crafting cheats with precision.",
+    hero_badge: "Available for projects", hero_greeting: "Hi, I'm",
+    hero_subtitle: "Exploring memory, reverse engineering, and crafting cheats.",
     hero_btn1: "Get to know me", hero_btn2: "Contact",
     about_tag: "About me", about_title1: "Who is",
     about_p1: "My name is <strong>VypeX</strong> (or just Vype), passionate about <strong>game hacking</strong>, reverse engineering, and software security. I work by manipulating process memory, analyzing internal game structures, and developing custom tools in <strong>C#</strong> and <strong>C++</strong> for vulnerability research and automation.",
-    about_p2: "I also build <strong>modern websites</strong> using <strong>HTML</strong> and <strong>CSS</strong>, creating clean, animated, and responsive interfaces. I combine both areas to build unique projects: sites for ethical hacking tools and dashboards for cheats and utilities.",
-    about_skill1: "Game Hacking & Reversing", about_skill2: "HTML, CSS, C#, C++", about_skill3: "Ethics & Research",
+    about_p2: "I also build <strong>modern websites</strong> using <strong>HTML</strong> and <strong>CSS</strong>, creating clean, animated, and responsive interfaces. I combine both areas to build unique projects.",
+    about_skill1: "Game Hacking", about_skill2: "Web Dev", about_skill3: "Ethics & Research",
     about_social_title: "Social & Contact",
     courses_tag: "Education", courses_title1: "Courses &", courses_title2: "Achievements",
     course_html_title: "HTML and CSS", course_html_desc: "Mastery of semantic structuring and modern styling, including Flexbox, Grid, and responsive animations.", course_html_level: "Advanced",
@@ -49,13 +49,13 @@ var translations = {
   },
   es: {
     nav_home: "Inicio", nav_about: "Sobre mí", nav_courses: "Cursos", nav_projects: "Divulgaciones", nav_contact: "Contacto",
-    hero_badge: "Game Hacker & Web Developer", hero_greeting: "Hola, soy",
-    hero_subtitle: "Explorando memoria, ingeniería inversa y creación de cheats con precisión.",
+    hero_badge: "Disponible para proyectos", hero_greeting: "Hola, soy",
+    hero_subtitle: "Explorando memoria, ingeniería inversa y creación de cheats.",
     hero_btn1: "Conóceme", hero_btn2: "Contacto",
     about_tag: "Sobre mí", about_title1: "¿Quién es",
     about_p1: "Mi nombre es <strong>VypeX</strong> (o simplemente Vype), apasionado por el <strong>game hacking</strong>, la ingeniería inversa y la seguridad del software. Trabajo manipulando la memoria de procesos, analizando estructuras internas de juegos y desarrollando herramientas personalizadas en <strong>C#</strong> y <strong>C++</strong> para el estudio de vulnerabilidades y automatización.",
-    about_p2: "También desarrollo <strong>sitios web modernos</strong> con <strong>HTML</strong> y <strong>CSS</strong>, creando interfaces limpias, animadas y responsivas. Uno ambas áreas para construir proyectos únicos: sitios para herramientas de hacking ético y dashboards para cheats y utilidades.",
-    about_skill1: "Game Hacking & Reversing", about_skill2: "HTML, CSS, C#, C++", about_skill3: "Ética & Estudio",
+    about_p2: "También desarrollo <strong>sitios web modernos</strong> con <strong>HTML</strong> y <strong>CSS</strong>, creando interfaces limpias, animadas y responsivas. Uno ambas áreas para construir proyectos únicos.",
+    about_skill1: "Game Hacking", about_skill2: "Web Dev", about_skill3: "Ética & Estudio",
     about_social_title: "Redes & Contacto",
     courses_tag: "Formación", courses_title1: "Cursos &", courses_title2: "Logros",
     course_html_title: "HTML y CSS", course_html_desc: "Dominio de la estructuración semántica y estilización moderna, incluyendo Flexbox, Grid y animaciones responsivas.", course_html_level: "Avanzado",
@@ -106,6 +106,11 @@ function applyLanguage(lang) {
       langItems[j].classList.remove('active');
     }
   }
+
+  // Atualiza o Typewriter se estiver na tela inicial
+  if (document.getElementById('home').getBoundingClientRect().top <= window.innerHeight) {
+    startTypewriter();
+  }
 }
 
 function updateActiveNav() {
@@ -137,6 +142,28 @@ function updateActiveNav() {
     if (active) links[k].setAttribute('aria-current', 'location');
     else links[k].removeAttribute('aria-current');
   }
+}
+
+// --- TYPEWRITER EFFECT ---
+var typewriterTimeout;
+function startTypewriter() {
+  var el = document.getElementById('typewriter');
+  if (!el) return;
+  
+  clearTimeout(typewriterTimeout);
+  
+  var text = translations[currentLang].hero_subtitle;
+  el.textContent = '';
+  var i = 0;
+  
+  function type() {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+      typewriterTimeout = setTimeout(type, 40);
+    }
+  }
+  type();
 }
 
 function initMusic() {
@@ -304,6 +331,7 @@ function initMusic() {
 
 function initAll() {
   applyLanguage(currentLang);
+  startTypewriter();
 
   // --- Cursor Customizado ---
   var cursorDot = document.getElementById('cursor-dot');
@@ -318,7 +346,7 @@ function initAll() {
       }, 50);
     });
 
-    var interactives = document.querySelectorAll('a, button, .tilt-card, .nav-link, .btn');
+    var interactives = document.querySelectorAll('a, button, .tilt-card, .nav-link, .btn, .tech-icon');
     interactives.forEach(function(el) {
       el.addEventListener('mouseenter', function() {
         document.body.classList.add('hovering-interactive');
@@ -449,7 +477,7 @@ function initAll() {
     var drops = [];
     var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var pointer = { x: -1000, y: -1000, targetX: -1000, targetY: -1000, active: false };
-    var purpleRain = ['rgba(139, 92, 246, 0.32)', 'rgba(167, 139, 250, 0.42)', 'rgba(196, 181, 253, 0.28)'];
+    var purpleRain = ['rgba(139, 92, 246, 0.2)', 'rgba(167, 139, 250, 0.3)', 'rgba(196, 181, 253, 0.15)'];
 
     function resizeCanvas() {
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -465,16 +493,16 @@ function initAll() {
 
     function createRain() {
       drops = [];
-      var amount = reducedMotion ? 0 : Math.min(68, Math.max(28, Math.floor(width / 22)));
+      var amount = reducedMotion ? 0 : Math.min(50, Math.max(20, Math.floor(width / 30)));
       for (var i = 0; i < amount; i++) {
-        var length = 8 + Math.random() * 20;
+        var length = 10 + Math.random() * 20;
         drops.push({
           x: Math.random() * width,
           y: Math.random() * height,
           length: length,
-          speed: 1.1 + Math.random() * 2.2,
-          drift: 0.12 + Math.random() * 0.28,
-          alpha: 0.16 + Math.random() * 0.32,
+          speed: 0.8 + Math.random() * 1.5,
+          drift: 0.1 + Math.random() * 0.2,
+          alpha: 0.1 + Math.random() * 0.2,
           color: purpleRain[Math.floor(Math.random() * purpleRain.length)]
         });
       }
@@ -505,28 +533,6 @@ function initAll() {
           if (drop.x > width + 5) drop.x = -5;
         }
       }
-
-      if (pointer.active) {
-        pointer.x += (pointer.targetX - pointer.x) * 0.16;
-        pointer.y += (pointer.targetY - pointer.y) * 0.16;
-        var beam = ctx.createRadialGradient(pointer.x, pointer.y, 0, pointer.x, pointer.y, 170);
-        beam.addColorStop(0, 'rgba(139, 92, 246, 0.12)');
-        beam.addColorStop(0.45, 'rgba(139, 92, 246, 0.045)');
-        beam.addColorStop(1, 'rgba(139, 92, 246, 0)');
-        ctx.globalAlpha = 1;
-        ctx.fillStyle = beam;
-        ctx.fillRect(pointer.x - 170, pointer.y - 170, 340, 340);
-        ctx.beginPath();
-        ctx.moveTo(pointer.x, 0);
-        ctx.lineTo(pointer.x, height);
-        ctx.strokeStyle = 'rgba(167, 139, 250, 0.12)';
-        ctx.lineWidth = 1;
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(pointer.x, pointer.y, 34, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(167, 139, 250, 0.18)';
-        ctx.stroke();
-      }
       ctx.globalAlpha = 1;
     }
 
@@ -538,18 +544,6 @@ function initAll() {
     resizeCanvas();
     animateRain();
     window.addEventListener('resize', resizeCanvas, { passive: true });
-    window.addEventListener('mousemove', function (e) {
-      if (pointer.x < 0 || pointer.y < 0) {
-        pointer.x = e.clientX;
-        pointer.y = e.clientY;
-      }
-      pointer.targetX = e.clientX;
-      pointer.targetY = e.clientY;
-      pointer.active = true;
-    }, { passive: true });
-    window.addEventListener('mouseleave', function () {
-      pointer.active = false;
-    });
   }
 
   // --- Smooth Scroll ---
@@ -582,28 +576,34 @@ function initAll() {
   window.addEventListener('scroll', updateProgressBar, { passive: true });
   updateProgressBar();
 
-  // --- Efeito 3D Tilt ---
+  // --- Efeito 3D Tilt e Spotlight ---
   var tiltElements = document.querySelectorAll('.tilt-card');
 
   tiltElements.forEach(function (el) {
+    var spotlight = el.querySelector('.spotlight');
+
     el.addEventListener('mousemove', function (e) {
       var rect = el.getBoundingClientRect();
       var x = e.clientX - rect.left;
       var y = e.clientY - rect.top;
 
+      // 3D Tilt
       var centerX = rect.width / 2;
       var centerY = rect.height / 2;
-
-      var rotateX = ((y - centerY) / centerY) * -10;
-      var rotateY = ((x - centerX) / centerX) * 10;
+      var rotateX = ((y - centerY) / centerY) * -8; // Mais sutil
+      var rotateY = ((x - centerX) / centerX) * 8;
 
       el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-      el.style.boxShadow = `0 20px 40px rgba(139, 92, 246, 0.4)`;
+      
+      // Spotlight
+      if (spotlight) {
+        spotlight.style.setProperty('--mouse-x', x + 'px');
+        spotlight.style.setProperty('--mouse-y', y + 'px');
+      }
     });
 
     el.addEventListener('mouseleave', function () {
       el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-      el.style.boxShadow = '';
     });
   });
 }
