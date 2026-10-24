@@ -6,11 +6,11 @@
   <title>vypeee</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Barra de Progresso (Topo) -->
+  <!-- Barra de Progresso -->
   <div class="scroll-progress" id="scroll-progress"></div>
   
   <!-- Cursor Customizado -->
@@ -55,6 +55,7 @@
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section id="home" class="hero">
       <div class="hero-content">
         <div class="hero-badge">
@@ -66,6 +67,16 @@
         <p class="hero-subtitle" data-i18n="hero_subtitle">
           Explorando memória, engenharia reversa e criação de cheats com precisão.
         </p>
+        
+        <!-- Badges de Tecnologia no Hero -->
+        <div class="hero-tech-stack">
+          <i class="devicon-html5-plain colored" title="HTML5"></i>
+          <i class="devicon-css3-plain colored" title="CSS3"></i>
+          <i class="devicon-cplusplus-plain colored" title="C++"></i>
+          <i class="devicon-csharp-plain colored" title="C#"></i>
+          <i class="devicon-python-plain colored" title="Python"></i>
+        </div>
+
         <div class="hero-cta">
           <a href="#about" class="btn btn-primary"><span data-i18n="hero_btn1">Conheça-me</span> <i class="fas fa-arrow-down"></i></a>
           <a href="#contact" class="btn btn-outline"><span data-i18n="hero_btn2">Contato</span> <i class="fas fa-paper-plane"></i></a>
@@ -76,6 +87,7 @@
       </div>
     </section>
 
+    <!-- SOBRE MIM -->
     <section id="about" class="section">
       <div class="container">
         <div class="section-header">
@@ -84,7 +96,10 @@
         </div>
         <div class="about-grid">
           <div class="about-card glass tilt-card">
-            <div class="about-avatar"><i class="fas fa-gamepad"></i></div>
+            <div class="about-avatar-wrapper">
+              <div class="about-avatar"><i class="fas fa-gamepad"></i></div>
+              <div class="status-indicator"></div>
+            </div>
             <p class="about-text" data-i18n="about_p1">
               Meu nome é <strong>VypeX</strong> (ou apenas Vype), um apaixonado por <strong>game hacking</strong>, 
               engenharia reversa e segurança de software. Trabalho manipulando memória de processos, analisando 
@@ -102,20 +117,50 @@
               <div class="highlight-item"><i class="fas fa-shield-halved"></i> <span data-i18n="about_skill3">Ética &amp; Estudo</span></div>
             </div>
           </div>
-          <div class="about-social glass tilt-card">
-            <h3 data-i18n="about_social_title">Redes &amp; Contato</h3>
-            <ul class="social-list">
-              <li><a href="https://instagram.com/violentarei" target="_blank" rel="noopener" class="social-link"><i class="fab fa-instagram"></i><span>@violentarei</span><i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="https://github.com/dallashypy" target="_blank" rel="noopener" class="social-link"><i class="fab fa-github"></i><span>dallashypy</span><i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="https://wa.me/5491157806564" target="_blank" rel="noopener" class="social-link"><i class="fab fa-whatsapp"></i><span>+54 9 11 5780-6564</span><i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="https://discord.com/users/vypezin" target="_blank" rel="noopener" class="social-link"><i class="fab fa-discord"></i><span>vypezin</span><i class="fas fa-arrow-right"></i></a></li>
-              <li><a href="https://discord.com/users/dallashy" target="_blank" rel="noopener" class="social-link"><i class="fab fa-discord"></i><span>dallashy</span><i class="fas fa-arrow-right"></i></a></li>
-            </ul>
+          
+          <!-- NOVO: Card de Código (Terminal) -->
+          <div class="about-social glass tilt-card code-card">
+            <div class="code-header">
+              <div class="code-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="code-title">vypex.cpp</span>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="code-purple">#include</span> <span class="code-string">&lt;iostream&gt;</span>
+<span class="code-purple">#include</span> <span class="code-string">&lt;memory&gt;</span>
+
+<span class="code-blue">class</span> <span class="code-yellow">VypeX</span> {
+<span class="code-blue">public</span>:
+    <span class="code-blue">void</span> <span class="code-yellow">createCheat</span>() {
+        <span class="code-blue">while</span>(<span class="code-purple">true</span>) {
+            <span class="code-comment">// Memory manipulation</span>
+            <span class="code-blue">uintptr_t</span> base = GetModuleBase(<span class="code-string">"game.exe"</span>);
+            WriteProcessMemory(base + <span class="code-number">0x14A</span>, <span class="code-number">9999</span>);
+            <span class="code-blue">std::cout</span> &lt;&lt; <span class="code-string">"Hooked!"</span> &lt;&lt; <span class="code-blue">std::endl</span>;
+        }
+    }
+};</code></pre>
+            </div>
           </div>
+          
+        </div>
+        
+        <!-- Redes Sociais em linha separada abaixo dos cards -->
+        <div class="social-row glass tilt-card">
+          <h3 data-i18n="about_social_title">Redes &amp; Contato</h3>
+          <ul class="social-list-row">
+            <li><a href="https://instagram.com/violentarei" target="_blank" rel="noopener" class="social-link"><i class="fab fa-instagram"></i><span>@violentarei</span></a></li>
+            <li><a href="https://github.com/dallashypy" target="_blank" rel="noopener" class="social-link"><i class="fab fa-github"></i><span>dallashypy</span></a></li>
+            <li><a href="https://wa.me/5491157806564" target="_blank" rel="noopener" class="social-link"><i class="fab fa-whatsapp"></i><span>+54 9 11 5780-6564</span></a></li>
+            <li><a href="https://discord.com/users/vypezin" target="_blank" rel="noopener" class="social-link"><i class="fab fa-discord"></i><span>vypezin</span></a></li>
+            <li><a href="https://discord.com/users/dallashy" target="_blank" rel="noopener" class="social-link"><i class="fab fa-discord"></i><span>dallashy</span></a></li>
+          </ul>
         </div>
       </div>
     </section>
 
+    <!-- CURSOS -->
     <section id="courses" class="section">
       <div class="container">
         <div class="section-header">
@@ -162,6 +207,7 @@
       </div>
     </section>
 
+    <!-- PROJETOS -->
     <section id="projects" class="section">
       <div class="container">
         <div class="section-header">
@@ -207,6 +253,7 @@
       </div>
     </section>
 
+    <!-- CONTATO -->
     <section id="contact" class="section">
       <div class="container">
         <div class="section-header">
