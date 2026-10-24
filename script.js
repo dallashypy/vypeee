@@ -334,8 +334,8 @@ function initScrollReveal() {
 
   var observerOptions = {
     root: null,
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.1
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.12
   };
 
   var observer = new IntersectionObserver(function(entries) {
@@ -543,7 +543,7 @@ function initAll() {
         ctx.globalAlpha = drop.alpha;
         ctx.lineWidth = 1;
         ctx.stroke();
-        if (!reducedMotion) {
+        if (!reducedMotion).
           drop.y += drop.speed;
           drop.x += drop.drift;
           if (drop.y > height + drop.length) {
