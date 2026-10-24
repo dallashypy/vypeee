@@ -305,6 +305,32 @@ function initMusic() {
 function initAll() {
   applyLanguage(currentLang);
 
+  // --- Lógica do Cursor Customizado ---
+  var cursorDot = document.getElementById('cursor-dot');
+  var cursorOutline = document.getElementById('cursor-outline');
+  
+  if (cursorDot && cursorOutline && window.matchMedia("(hover: hover)").matches) {
+    window.addEventListener('mousemove', function(e) {
+      cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+      
+      // Efeito de atraso no outline
+      setTimeout(function() {
+        cursorOutline.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+      }, 50);
+    });
+
+    // Aumenta o cursor em elementos interativos
+    var interactives = document.querySelectorAll('a, button, .tilt-card, .nav-link, .btn');
+    interactives.forEach(function(el) {
+      el.addEventListener('mouseenter', function() {
+        document.body.classList.add('hovering-interactive');
+      });
+      el.addEventListener('mouseleave', function() {
+        document.body.classList.remove('hovering-interactive');
+      });
+    });
+  }
+
   var langSelector = document.getElementById('lang-selector');
   var langToggle = document.getElementById('lang-toggle');
   var langDropdown = document.getElementById('lang-dropdown');
@@ -555,7 +581,7 @@ function initAll() {
   initMusic();
 
   /* =========================================
-     NOVAS ANIMAÇÕES INTERATIVAS
+     NOVAS ANIMAÇÕES INTERATIVAS E BARRA DE PROGRESSO
      ========================================= */
 
   // 1. Barra de Progresso (Top)
@@ -571,28 +597,27 @@ function initAll() {
   updateProgressBar(); // Inicializa
 
   // 2. Efeito 3D Tilt
-  var tiltElements = document.querySelectorAll('.course-card, .project-card, .about-card, .about-social');
+  var tiltElements = document.querySelectorAll('.tilt-card');
 
   tiltElements.forEach(function (el) {
     el.addEventListener('mousemove', function (e) {
       var rect = el.getBoundingClientRect();
-      var x = e.clientX - rect.left; // x position within the element.
-      var y = e.clientY - rect.top;  // y position within the element.
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
 
       var centerX = rect.width / 2;
       var centerY = rect.height / 2;
 
-      // Calcula a rotação (max 10 graus)
-      var rotateX = ((y - centerY) / centerY) * -10;
-      var rotateY = ((x - centerX) / centerX) * 10;
+      var rotateX = ((y - centerY) / centerY) * -12;
+      var rotateY = ((x - centerX) / centerX) * 12;
 
       el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-      el.style.boxShadow = `0 15px 35px rgba(139, 92, 246, 0.3)`;
+      el.style.boxShadow = `0 20px 40px rgba(139, 92, 246, 0.4)`;
     });
 
     el.addEventListener('mouseleave', function () {
       el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-      el.style.boxShadow = ''; // Volta ao padrão do CSS
+      el.style.boxShadow = '';
     });
   });
 }
