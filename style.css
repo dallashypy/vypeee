@@ -518,8 +518,10 @@ header, main, footer { position: relative; z-index: 2; }
 .hero-tech-stack {
   display: flex;
   justify-content: center;
-  gap: 1.2rem;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 2.5rem;
+  flex-wrap: wrap;
   animation: fadeInUp 1.2s ease-out;
 }
 
@@ -608,9 +610,10 @@ header, main, footer { position: relative; z-index: 2; }
 /* ============ ABOUT ============ */
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
+  align-items: stretch; /* Faz os cards terem a mesma altura */
 }
 
 .about-card { padding: 2.5rem; display: flex; flex-direction: column; }
