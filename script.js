@@ -57,10 +57,10 @@ var translations = {
     about_p2: "También desarrollo <strong>sitios web modernos</strong> con <strong>HTML</strong> y <strong>CSS</strong>, creando interfaces limpias, animadas y responsivas. Uno ambas áreas para construir proyectos únicos.",
     about_skill1: "Game Hacking", about_skill2: "Web Dev", about_skill3: "Ética & Estudio",
     about_social_title: "Redes & Contacto",
-    courses_tag: "Formação", courses_title1: "Cursos &", courses_title2: "Logros",
+    courses_tag: "Formación", courses_title1: "Cursos &", courses_title2: "Logros",
     course_html_title: "HTML y CSS", course_html_desc: "Dominio de la estructuración semántica y estilización moderna, incluyendo Flexbox, Grid y animaciones responsivas.", course_html_level: "Avanzado",
     course_python_title: "Python", course_python_desc: "Programación orientada a objetos, automatización, manipulación de datos y desarrollo de scripts eficientes.", course_python_level: "Intermedio-Avanzado",
-    course_ads_title: "Análisis y Desarrollo de Sistemas", course_ads_desc: "Formação superior con enfoque en ingeniería de software, bases de datos, metodologías ágiles y arquitectura de sistemas.", course_ads_level: "Cursando",
+    course_ads_title: "Análisis y Desarrollo de Sistemas", course_ads_desc: "Formación superior con enfoque en ingeniería de software, bases de datos, metodologías ágiles y arquitectura de sistemas.", course_ads_level: "Cursando",
     course_csharp_title: "C#", course_csharp_desc: "Desarrollo de aplicaciones .NET, cheats, lectura/escritura de memoria, hooks e integración con juegos y APIs externas.", course_csharp_level: "Avanzado",
     course_cpp_title: "C++", course_cpp_desc: "Programación de bajo nivel, manipulación de memoria, inyección de DLLs, hooks y desarrollo de cheats de alto rendimiento.", course_cpp_level: "Avanzado",
     projects_tag: "Divulgaciones", projects_title1: "Áreas que", projects_title2: "poseo",
@@ -158,7 +158,7 @@ function startTypewriter() {
     if (i < text.length) {
       el.textContent += text.charAt(i);
       i++;
-      typewriterTimeout = setTimeout(type, 40);
+      typewriterTimeout = setTimeout(type, 70);
     }
   }
   type();
