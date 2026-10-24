@@ -134,7 +134,6 @@ header, main, footer { position: relative; z-index: 2; }
   overflow: hidden;
 }
 
-/* Efeito de brilho no topo do card */
 .glass::before {
   content: '';
   position: absolute;
@@ -144,7 +143,6 @@ header, main, footer { position: relative; z-index: 2; }
   z-index: 1;
 }
 
-/* Efeito Spotlight (Holofote) */
 .spotlight-card {
   position: relative;
 }
@@ -164,13 +162,11 @@ header, main, footer { position: relative; z-index: 2; }
   opacity: 1;
 }
 
-/* Conteúdo fica acima do spotlight */
 .spotlight-card > *:not(.spotlight) {
   position: relative;
   z-index: 2;
 }
 
-/* Efeito 3D nos cards */
 .tilt-card {
   transition: transform 0.1s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
   transform-style: preserve-3d;
@@ -506,7 +502,7 @@ header, main, footer { position: relative; z-index: 2; }
   max-width: 62ch;
   margin-left: auto;
   margin-right: auto;
-  min-height: 2em; /* Evita pulo de layout */
+  min-height: 2em;
 }
 
 .cursor-type {
@@ -608,12 +604,12 @@ header, main, footer { position: relative; z-index: 2; }
 }
 
 /* ============ ABOUT ============ */
-.about-grid {
+.about-wrapper {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
-  align-items: stretch; /* Faz os cards terem a mesma altura */
+  align-items: stretch;
 }
 
 .about-card { padding: 2.5rem; display: flex; flex-direction: column; }
@@ -734,7 +730,6 @@ header, main, footer { position: relative; z-index: 2; }
   color: #e2e8f0;
 }
 
-/* Syntax Highlight */
 .code-purple { color: #d8b4fe; }
 .code-blue { color: #93c5fd; }
 .code-yellow { color: #fcd34d; }
@@ -1116,7 +1111,8 @@ header, main, footer { position: relative; z-index: 2; }
   .menu-toggle { display: block; }
   .nav-container { flex: 0 0 auto; }
   .nav-actions { margin-left: auto; gap: 0.65rem; }
-  .about-grid { grid-template-columns: minmax(0, 1fr); }
+  
+  .about-wrapper { grid-template-columns: minmax(0, 1fr); }
   .contact-wrapper { align-items: stretch; }
 }
 
