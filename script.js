@@ -77,8 +77,8 @@ var langLabels = { pt: "PT-BR", en: "English", es: "Español" };
 var currentLang = 'pt';
 
 try {
-  var saved = localStorage.getItem('vype-lang');
-  if (saved && translations[saved]) currentLang = saved;
+  // Limpar localStorage antigo se tiver texto antigo armazenado
+  localStorage.removeItem('vype-lang');
 } catch (e) {}
 
 function applyLanguage(lang) {
@@ -107,9 +107,7 @@ function applyLanguage(lang) {
     }
   }
 
-  if (document.getElementById('home').getBoundingClientRect().top <= window.innerHeight) {
-    startTypewriter();
-  }
+  startTypewriter();
 }
 
 function updateActiveNav() {
@@ -150,7 +148,7 @@ function startTypewriter() {
   
   clearTimeout(typewriterTimeout);
   
-  var text = translations[currentLang].hero_subtitle;
+  var text = "Just a Programmer";
   el.textContent = '';
   var i = 0;
   
@@ -158,7 +156,7 @@ function startTypewriter() {
     if (i < text.length) {
       el.textContent += text.charAt(i);
       i++;
-      typewriterTimeout = setTimeout(type, 70);
+      typewriterTimeout = setTimeout(type, 80);
     }
   }
   type();
@@ -327,15 +325,15 @@ function initMusic() {
   });
 }
 
-// ============ ANIMAÇÃO DE SCROLL (REVEAL - ENTRAR E SAIR) ============
+// ============ ANIMAÇÃO DE SCROLL (ENTRAR E SAIR AO ROLAR) ============
 function initScrollReveal() {
   var revealElements = document.querySelectorAll('.reveal');
   if (!revealElements.length) return;
 
   var observerOptions = {
     root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.12
+    rootMargin: '0px 0px -20px 0px',
+    threshold: 0.1
   };
 
   var observer = new IntersectionObserver(function(entries) {
