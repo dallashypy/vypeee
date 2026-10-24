@@ -305,7 +305,7 @@ function initMusic() {
 function initAll() {
   applyLanguage(currentLang);
 
-  // --- Lógica do Cursor Customizado ---
+  // --- Cursor Customizado ---
   var cursorDot = document.getElementById('cursor-dot');
   var cursorOutline = document.getElementById('cursor-outline');
   
@@ -313,13 +313,11 @@ function initAll() {
     window.addEventListener('mousemove', function(e) {
       cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
       
-      // Efeito de atraso no outline
       setTimeout(function() {
         cursorOutline.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
       }, 50);
     });
 
-    // Aumenta o cursor em elementos interativos
     var interactives = document.querySelectorAll('a, button, .tilt-card, .nav-link, .btn');
     interactives.forEach(function(el) {
       el.addEventListener('mouseenter', function() {
@@ -331,6 +329,7 @@ function initAll() {
     });
   }
 
+  // --- Navbar e Idioma ---
   var langSelector = document.getElementById('lang-selector');
   var langToggle = document.getElementById('lang-toggle');
   var langDropdown = document.getElementById('lang-dropdown');
@@ -372,12 +371,6 @@ function initAll() {
         }
       };
     })(langItems[i]);
-    langItems[i].onkeydown = function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.click();
-      }
-    };
   }
 
   var menuToggle = document.getElementById('menu-toggle');
@@ -406,12 +399,6 @@ function initAll() {
         }
       }
     });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        navLinksList.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
   }
 
   var navLinks = document.querySelectorAll('.nav-link');
@@ -434,6 +421,7 @@ function initAll() {
   setTimeout(updateActiveNav, 500);
   setTimeout(updateActiveNav, 1500);
 
+  // --- Barras de Progresso ---
   var bars = document.querySelectorAll('.bar-fill');
   function animateBars() {
     var vh = window.innerHeight;
@@ -452,6 +440,7 @@ function initAll() {
   setTimeout(animateBars, 200);
   animateBars();
 
+  // --- Partículas ---
   var canvas = document.getElementById('particles-canvas');
   if (canvas && canvas.getContext) {
     var ctx = canvas.getContext('2d');
@@ -563,6 +552,7 @@ function initAll() {
     });
   }
 
+  // --- Smooth Scroll ---
   var anchors = document.querySelectorAll('a[href^="#"]');
   for (var q = 0; q < anchors.length; q++) {
     anchors[q].addEventListener('click', function (e) {
@@ -580,11 +570,7 @@ function initAll() {
 
   initMusic();
 
-  /* =========================================
-     NOVAS ANIMAÇÕES INTERATIVAS E BARRA DE PROGRESSO
-     ========================================= */
-
-  // 1. Barra de Progresso (Top)
+  // --- Barra de Progresso ---
   var progressBar = document.getElementById('scroll-progress');
   function updateProgressBar() {
     if (!progressBar) return;
@@ -594,9 +580,9 @@ function initAll() {
     progressBar.style.width = Math.min(100, Math.max(0, percent)) + '%';
   }
   window.addEventListener('scroll', updateProgressBar, { passive: true });
-  updateProgressBar(); // Inicializa
+  updateProgressBar();
 
-  // 2. Efeito 3D Tilt
+  // --- Efeito 3D Tilt ---
   var tiltElements = document.querySelectorAll('.tilt-card');
 
   tiltElements.forEach(function (el) {
@@ -608,8 +594,8 @@ function initAll() {
       var centerX = rect.width / 2;
       var centerY = rect.height / 2;
 
-      var rotateX = ((y - centerY) / centerY) * -12;
-      var rotateY = ((x - centerX) / centerX) * 12;
+      var rotateX = ((y - centerY) / centerY) * -10;
+      var rotateY = ((x - centerX) / centerX) * 10;
 
       el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
       el.style.boxShadow = `0 20px 40px rgba(139, 92, 246, 0.4)`;
