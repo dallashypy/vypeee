@@ -33,7 +33,7 @@ body {
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  cursor: none; /* Cursor customizado ativo */
+  cursor: none;
 }
 
 input, textarea, .contact-email, [contenteditable="true"] {
@@ -511,8 +511,10 @@ header, main, footer { position: relative; z-index: 2; }
   font-weight: 300;
 }
 
+/* CORREÇÃO DO GRID DE ÍCONES */
 .hero-tech-stack {
   display: flex;
+  flex-direction: row; /* Força ficar em linha */
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -737,7 +739,7 @@ header, main, footer { position: relative; z-index: 2; }
 .code-comment { color: #6b7280; font-style: italic; }
 .code-number { color: #fca5a5; }
 
-/* Redes Sociais */
+/* CORREÇÃO DAS REDES SOCIAIS */
 .social-row {
   padding: 1.5rem 2rem;
   display: flex;
@@ -754,6 +756,7 @@ header, main, footer { position: relative; z-index: 2; }
 
 .social-list-row {
   display: flex;
+  flex-direction: row; /* Força ficar em linha */
   gap: 1rem;
   list-style: none;
   flex-wrap: wrap;
@@ -1127,16 +1130,22 @@ header, main, footer { position: relative; z-index: 2; }
   .menu-toggle { font-size: 1.3rem; padding: 0.35rem; }
   .hero { min-height: calc(88svh - 65px); padding: 4.5rem 1rem 5rem; }
   .hero-title { font-size: clamp(1.85rem, 8vw, 2.6rem); line-height: 1.15; }
+  
+  /* Ajuste dos ícones no mobile */
   .hero-tech-stack { gap: 0.8rem; }
   .tech-icon { width: 40px; height: 40px; font-size: 1.4rem; }
+  
   .hero-cta { width: 100%; gap: 0.7rem; }
   .btn { justify-content: center; padding: 0.8rem 1.1rem; font-size: 0.9rem; }
   .section-header { margin-bottom: 2rem; }
   .about-card, .about-social { padding: 1.25rem; }
   .about-header { flex-direction: column; text-align: center; gap: 0.5rem; }
   .social-row { padding: 1.25rem; }
-  .social-list-row { gap: 0.6rem; flex-direction: column; width: 100%; }
+  
+  /* Ajuste das redes sociais no mobile */
+  .social-list-row { flex-direction: column; width: 100%; align-items: center; }
   .social-link { width: 100%; justify-content: center; }
+  
   .about-highlights { gap: 0.6rem; }
   .highlight-item { font-size: 0.82rem; padding: 0.45rem 0.65rem; }
   .courses-grid { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
