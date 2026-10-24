@@ -327,9 +327,36 @@ function initMusic() {
   });
 }
 
+// ============ ANIMAÇÃO DE SCROLL (REVEAL - ENTRAR E SAIR) ============
+function initScrollReveal() {
+  var revealElements = document.querySelectorAll('.reveal');
+  if (!revealElements.length) return;
+
+  var observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -10% 0px',
+    threshold: 0.15
+  };
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(function(el) {
+    observer.observe(el);
+  });
+}
+
 function initAll() {
   applyLanguage(currentLang);
   startTypewriter();
+  initScrollReveal();
 
   var cursorDot = document.getElementById('cursor-dot');
   var cursorOutline = document.getElementById('cursor-outline');
