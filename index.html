@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vypeee</title>
+  <title>vypeee | Game Hacker & Web Developer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -17,6 +17,8 @@
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-outline" id="cursor-outline"></div>
 
+  <!-- Background Grid Sutil -->
+  <div class="bg-grid"></div>
   <canvas id="particles-canvas"></canvas>
 
   <header class="navbar">
@@ -59,22 +61,21 @@
     <section id="home" class="hero">
       <div class="hero-content">
         <div class="hero-badge">
-          <i class="fas fa-code"></i> <span data-i18n="hero_badge">Game Hacker &amp; Web Developer</span>
+          <span class="status-dot"></span> <span data-i18n="hero_badge">Disponível para projetos</span>
         </div>
         <h1 class="hero-title">
           <span data-i18n="hero_greeting">Olá, eu sou</span> <span class="gradient-text">VypeX</span>
         </h1>
-        <p class="hero-subtitle" data-i18n="hero_subtitle">
-          Explorando memória, engenharia reversa e criação de cheats com precisão.
+        <p class="hero-subtitle">
+          <span id="typewriter" data-i18n="hero_subtitle">Explorando memória, engenharia reversa e criação de cheats.</span><span class="cursor-type">|</span>
         </p>
         
-        <!-- Badges de Tecnologia no Hero -->
         <div class="hero-tech-stack">
-          <i class="devicon-html5-plain colored" title="HTML5"></i>
-          <i class="devicon-css3-plain colored" title="CSS3"></i>
-          <i class="devicon-cplusplus-plain colored" title="C++"></i>
-          <i class="devicon-csharp-plain colored" title="C#"></i>
-          <i class="devicon-python-plain colored" title="Python"></i>
+          <div class="tech-icon" title="HTML5"><i class="devicon-html5-plain colored"></i></div>
+          <div class="tech-icon" title="CSS3"><i class="devicon-css3-plain colored"></i></div>
+          <div class="tech-icon" title="C++"><i class="devicon-cplusplus-plain colored"></i></div>
+          <div class="tech-icon" title="C#"><i class="devicon-csharp-plain colored"></i></div>
+          <div class="tech-icon" title="Python"><i class="devicon-python-plain colored"></i></div>
         </div>
 
         <div class="hero-cta">
@@ -95,36 +96,47 @@
           <h2 class="section-title"><span data-i18n="about_title1">Quem é</span> <span class="gradient-text">VypeX</span>?</h2>
         </div>
         <div class="about-grid">
-          <div class="about-card glass tilt-card">
-            <div class="about-avatar-wrapper">
-              <div class="about-avatar"><i class="fas fa-gamepad"></i></div>
-              <div class="status-indicator"></div>
+          
+          <!-- Card de Texto -->
+          <div class="about-card glass tilt-card spotlight-card">
+            <div class="spotlight"></div>
+            <div class="about-header">
+              <div class="about-avatar-wrapper">
+                <div class="about-avatar"><i class="fas fa-gamepad"></i></div>
+                <div class="status-indicator"></div>
+              </div>
+              <div class="about-info">
+                <h3>VypeX</h3>
+                <span class="role-tag">Game Hacker & Dev</span>
+              </div>
             </div>
-            <p class="about-text" data-i18n="about_p1">
-              Meu nome é <strong>VypeX</strong> (ou apenas Vype), um apaixonado por <strong>game hacking</strong>, 
-              engenharia reversa e segurança de software. Trabalho manipulando memória de processos, analisando 
-              estruturas internas de jogos e desenvolvendo ferramentas personalizadas em <strong>C#</strong> e 
-              <strong>C++</strong> para estudo de vulnerabilidades e automação.
-            </p>
-            <p class="about-text" data-i18n="about_p2">
-              Além disso, desenvolvo <strong>websites modernos</strong> com <strong>HTML</strong> e <strong>CSS</strong>, 
-              criando interfaces limpas, animadas e responsivas. Uno as duas áreas para construir projetos únicos: 
-              sites para ferramentas de hacking ético e dashboards para cheats e utilitários.
-            </p>
+            <div class="about-body">
+              <p class="about-text" data-i18n="about_p1">
+                Meu nome é <strong>VypeX</strong> (ou apenas Vype), um apaixonado por <strong>game hacking</strong>, 
+                engenharia reversa e segurança de software. Trabalho manipulando memória de processos, analisando 
+                estruturas internas de jogos e desenvolvendo ferramentas personalizadas em <strong>C#</strong> e 
+                <strong>C++</strong> para estudo de vulnerabilidades e automação.
+              </p>
+              <p class="about-text" data-i18n="about_p2">
+                Além disso, desenvolvo <strong>websites modernos</strong> com <strong>HTML</strong> e <strong>CSS</strong>, 
+                criando interfaces limpas, animadas e responsivas. Uno as duas áreas para construir projetos únicos.
+              </p>
+            </div>
             <div class="about-highlights">
-              <div class="highlight-item"><i class="fas fa-terminal"></i> <span data-i18n="about_skill1">Game Hacking &amp; Reversing</span></div>
-              <div class="highlight-item"><i class="fas fa-code"></i> <span data-i18n="about_skill2">HTML, CSS, C#, C++</span></div>
-              <div class="highlight-item"><i class="fas fa-shield-halved"></i> <span data-i18n="about_skill3">Ética &amp; Estudo</span></div>
+              <div class="highlight-item"><i class="fas fa-terminal"></i> <span data-i18n="about_skill1">Game Hacking</span></div>
+              <div class="highlight-item"><i class="fas fa-code"></i> <span data-i18n="about_skill2">Web Dev</span></div>
+              <div class="highlight-item"><i class="fas fa-shield-halved"></i> <span data-i18n="about_skill3">Ética</span></div>
             </div>
           </div>
           
-          <!-- NOVO: Card de Código (Terminal) -->
-          <div class="about-social glass tilt-card code-card">
+          <!-- Card de Código -->
+          <div class="code-card glass tilt-card spotlight-card">
+            <div class="spotlight"></div>
             <div class="code-header">
               <div class="code-dots">
                 <span></span><span></span><span></span>
               </div>
-              <span class="code-title">vypex.cpp</span>
+              <span class="code-title">cheat_engine.cpp</span>
             </div>
             <div class="code-content">
               <pre><code><span class="code-purple">#include</span> <span class="code-string">&lt;iostream&gt;</span>
@@ -132,12 +144,13 @@
 
 <span class="code-blue">class</span> <span class="code-yellow">VypeX</span> {
 <span class="code-blue">public</span>:
-    <span class="code-blue">void</span> <span class="code-yellow">createCheat</span>() {
+    <span class="code-blue">void</span> <span class="code-yellow">init</span>() {
+        <span class="code-blue">uintptr_t</span> base = GetModuleBase(<span class="code-string">"game.exe"</span>);
         <span class="code-blue">while</span>(<span class="code-purple">true</span>) {
             <span class="code-comment">// Memory manipulation</span>
-            <span class="code-blue">uintptr_t</span> base = GetModuleBase(<span class="code-string">"game.exe"</span>);
             WriteProcessMemory(base + <span class="code-number">0x14A</span>, <span class="code-number">9999</span>);
-            <span class="code-blue">std::cout</span> &lt;&lt; <span class="code-string">"Hooked!"</span> &lt;&lt; <span class="code-blue">std::endl</span>;
+            <span class="code-blue">std::cout</span> &lt;&lt; <span class="code-string">"Hooked!"</span>;
+            <span class="code-blue">std::this_thread</span>::sleep_for(<span class="code-number">10ms</span>);
         }
     }
 };</code></pre>
@@ -146,8 +159,9 @@
           
         </div>
         
-        <!-- Redes Sociais em linha separada abaixo dos cards -->
-        <div class="social-row glass tilt-card">
+        <!-- Redes Sociais -->
+        <div class="social-row glass tilt-card spotlight-card">
+          <div class="spotlight"></div>
           <h3 data-i18n="about_social_title">Redes &amp; Contato</h3>
           <ul class="social-list-row">
             <li><a href="https://instagram.com/violentarei" target="_blank" rel="noopener" class="social-link"><i class="fab fa-instagram"></i><span>@violentarei</span></a></li>
@@ -168,35 +182,40 @@
           <h2 class="section-title"><span data-i18n="courses_title1">Cursos &amp;</span> <span class="gradient-text" data-i18n="courses_title2">Conquistas</span></h2>
         </div>
         <div class="courses-grid">
-          <div class="course-card glass tilt-card">
+          <div class="course-card glass tilt-card spotlight-card">
+            <div class="spotlight"></div>
             <div class="course-icon"><i class="devicon-html5-plain colored"></i><i class="devicon-css3-plain colored"></i></div>
             <h3 data-i18n="course_html_title">HTML e CSS</h3>
             <p data-i18n="course_html_desc">Domínio da estruturação semântica e estilização moderna, incluindo Flexbox, Grid e animações responsivas.</p>
             <div class="course-bar"><div class="bar-fill" data-width="95%"></div></div>
             <span class="course-level" data-i18n="course_html_level">Avançado</span>
           </div>
-          <div class="course-card glass tilt-card">
+          <div class="course-card glass tilt-card spotlight-card">
+            <div class="spotlight"></div>
             <div class="course-icon"><i class="devicon-python-plain colored"></i></div>
             <h3 data-i18n="course_python_title">Python</h3>
             <p data-i18n="course_python_desc">Programação orientada a objetos, automação, manipulação de dados e desenvolvimento de scripts eficientes.</p>
             <div class="course-bar"><div class="bar-fill" data-width="85%"></div></div>
             <span class="course-level" data-i18n="course_python_level">Intermediário-Avançado</span>
           </div>
-          <div class="course-card glass tilt-card">
+          <div class="course-card glass tilt-card spotlight-card">
+            <div class="spotlight"></div>
             <div class="course-icon"><i class="fas fa-graduation-cap"></i></div>
             <h3 data-i18n="course_ads_title">Análise e Desenvolvimento de Sistemas</h3>
             <p data-i18n="course_ads_desc">Formação superior com foco em engenharia de software, banco de dados, metodologias ágeis e arquitetura de sistemas.</p>
             <div class="course-bar"><div class="bar-fill" data-width="70%"></div></div>
             <span class="course-level" data-i18n="course_ads_level">Cursando</span>
           </div>
-          <div class="course-card glass tilt-card">
+          <div class="course-card glass tilt-card spotlight-card">
+            <div class="spotlight"></div>
             <div class="course-icon"><i class="devicon-csharp-plain colored"></i></div>
             <h3 data-i18n="course_csharp_title">C#</h3>
             <p data-i18n="course_csharp_desc">Desenvolvimento de aplicações .NET, cheats, memory reading/writing, hooks e integração com jogos e APIs externas.</p>
             <div class="course-bar"><div class="bar-fill" data-width="90%"></div></div>
             <span class="course-level" data-i18n="course_csharp_level">Avançado</span>
           </div>
-          <div class="course-card glass tilt-card">
+          <div class="course-card glass tilt-card spotlight-card">
+            <div class="spotlight"></div>
             <div class="course-icon"><i class="devicon-cplusplus-plain colored"></i></div>
             <h3 data-i18n="course_cpp_title">C++</h3>
             <p data-i18n="course_cpp_desc">Programação de baixo nível, manipulação de memória, injeção de DLLs, hooks e desenvolvimento de cheats de alto desempenho.</p>
@@ -215,7 +234,8 @@
           <h2 class="section-title"><span data-i18n="projects_title1">Áreas que</span> <span class="gradient-text" data-i18n="projects_title2">sou dono</span></h2>
         </div>
         <div class="projects-grid">
-          <div class="project-card glass tilt-card">
+          <div class="project-card glass tilt-card spotlight-card">
+            <div class="spotlight"></div>
             <div class="project-logo">
               <img src="cyber.webp" alt="Cyber Client" loading="lazy">
             </div>
@@ -232,7 +252,8 @@
               </a>
             </div>
           </div>
-          <div class="project-card glass tilt-card">
+          <div class="project-card glass tilt-card spotlight-card">
+            <div class="spotlight"></div>
             <div class="project-logo">
               <img src="nologs.webp" alt="NoLogs" loading="lazy">
             </div>
@@ -260,7 +281,8 @@
           <span class="section-tag" data-i18n="contact_tag">Vamos conversar</span>
           <h2 class="section-title"><span data-i18n="contact_title1">Entre em</span> <span class="gradient-text" data-i18n="contact_title2">contato</span></h2>
         </div>
-        <div class="contact-wrapper glass tilt-card">
+        <div class="contact-wrapper glass tilt-card spotlight-card">
+          <div class="spotlight"></div>
           <div class="contact-info">
             <p><i class="fas fa-envelope"></i> <a href="mailto:dallashycontact@gmail.com" class="contact-email">dallashycontact@gmail.com</a></p>
             <p><i class="fas fa-globe"></i> <span data-i18n="contact_available">Disponível para projetos e colaborações.</span></p>
@@ -290,7 +312,7 @@
       <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.35" aria-label="Volume da música">
       <i class="fas fa-volume-high"></i>
     </div>
-    <button id="music-toggle" class="music-toggle" type="button" aria-label="Ligar/desligar música" aria-pressed="false" title="Clique: play/pause • Duplo clique ou botão direito: fixar volume">
+    <button id="music-toggle" class="music-toggle" type="button" aria-label="Ligar/desligar música" aria-pressed="false">
       <i class="fas fa-volume-xmark"></i>
     </button>
   </div>
