@@ -10,7 +10,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Barra de Progresso (Topo) -->
   <div class="scroll-progress" id="scroll-progress"></div>
+  
+  <!-- Cursor Customizado -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+
   <canvas id="particles-canvas"></canvas>
 
   <header class="navbar">
@@ -77,7 +83,7 @@
           <h2 class="section-title"><span data-i18n="about_title1">Quem é</span> <span class="gradient-text">VypeX</span>?</h2>
         </div>
         <div class="about-grid">
-          <div class="about-card glass">
+          <div class="about-card glass tilt-card">
             <div class="about-avatar"><i class="fas fa-gamepad"></i></div>
             <p class="about-text" data-i18n="about_p1">
               Meu nome é <strong>VypeX</strong> (ou apenas Vype), um apaixonado por <strong>game hacking</strong>, 
@@ -96,7 +102,7 @@
               <div class="highlight-item"><i class="fas fa-shield-halved"></i> <span data-i18n="about_skill3">Ética &amp; Estudo</span></div>
             </div>
           </div>
-          <div class="about-social glass">
+          <div class="about-social glass tilt-card">
             <h3 data-i18n="about_social_title">Redes &amp; Contato</h3>
             <ul class="social-list">
               <li><a href="https://instagram.com/violentarei" target="_blank" rel="noopener" class="social-link"><i class="fab fa-instagram"></i><span>@violentarei</span><i class="fas fa-arrow-right"></i></a></li>
@@ -117,35 +123,35 @@
           <h2 class="section-title"><span data-i18n="courses_title1">Cursos &amp;</span> <span class="gradient-text" data-i18n="courses_title2">Conquistas</span></h2>
         </div>
         <div class="courses-grid">
-          <div class="course-card glass">
+          <div class="course-card glass tilt-card">
             <div class="course-icon"><i class="devicon-html5-plain colored"></i><i class="devicon-css3-plain colored"></i></div>
             <h3 data-i18n="course_html_title">HTML e CSS</h3>
             <p data-i18n="course_html_desc">Domínio da estruturação semântica e estilização moderna, incluindo Flexbox, Grid e animações responsivas.</p>
             <div class="course-bar"><div class="bar-fill" data-width="95%"></div></div>
             <span class="course-level" data-i18n="course_html_level">Avançado</span>
           </div>
-          <div class="course-card glass">
+          <div class="course-card glass tilt-card">
             <div class="course-icon"><i class="devicon-python-plain colored"></i></div>
             <h3 data-i18n="course_python_title">Python</h3>
             <p data-i18n="course_python_desc">Programação orientada a objetos, automação, manipulação de dados e desenvolvimento de scripts eficientes.</p>
             <div class="course-bar"><div class="bar-fill" data-width="85%"></div></div>
             <span class="course-level" data-i18n="course_python_level">Intermediário-Avançado</span>
           </div>
-          <div class="course-card glass">
+          <div class="course-card glass tilt-card">
             <div class="course-icon"><i class="fas fa-graduation-cap"></i></div>
             <h3 data-i18n="course_ads_title">Análise e Desenvolvimento de Sistemas</h3>
             <p data-i18n="course_ads_desc">Formação superior com foco em engenharia de software, banco de dados, metodologias ágeis e arquitetura de sistemas.</p>
             <div class="course-bar"><div class="bar-fill" data-width="70%"></div></div>
             <span class="course-level" data-i18n="course_ads_level">Cursando</span>
           </div>
-          <div class="course-card glass">
+          <div class="course-card glass tilt-card">
             <div class="course-icon"><i class="devicon-csharp-plain colored"></i></div>
             <h3 data-i18n="course_csharp_title">C#</h3>
             <p data-i18n="course_csharp_desc">Desenvolvimento de aplicações .NET, cheats, memory reading/writing, hooks e integração com jogos e APIs externas.</p>
             <div class="course-bar"><div class="bar-fill" data-width="90%"></div></div>
             <span class="course-level" data-i18n="course_csharp_level">Avançado</span>
           </div>
-          <div class="course-card glass">
+          <div class="course-card glass tilt-card">
             <div class="course-icon"><i class="devicon-cplusplus-plain colored"></i></div>
             <h3 data-i18n="course_cpp_title">C++</h3>
             <p data-i18n="course_cpp_desc">Programação de baixo nível, manipulação de memória, injeção de DLLs, hooks e desenvolvimento de cheats de alto desempenho.</p>
@@ -163,7 +169,7 @@
           <h2 class="section-title"><span data-i18n="projects_title1">Áreas que</span> <span class="gradient-text" data-i18n="projects_title2">sou dono</span></h2>
         </div>
         <div class="projects-grid">
-          <div class="project-card glass">
+          <div class="project-card glass tilt-card">
             <div class="project-logo">
               <img src="cyber.webp" alt="Cyber Client" loading="lazy">
             </div>
@@ -180,7 +186,7 @@
               </a>
             </div>
           </div>
-          <div class="project-card glass">
+          <div class="project-card glass tilt-card">
             <div class="project-logo">
               <img src="nologs.webp" alt="NoLogs" loading="lazy">
             </div>
@@ -207,7 +213,7 @@
           <span class="section-tag" data-i18n="contact_tag">Vamos conversar</span>
           <h2 class="section-title"><span data-i18n="contact_title1">Entre em</span> <span class="gradient-text" data-i18n="contact_title2">contato</span></h2>
         </div>
-        <div class="contact-wrapper glass">
+        <div class="contact-wrapper glass tilt-card">
           <div class="contact-info">
             <p><i class="fas fa-envelope"></i> <a href="mailto:dallashycontact@gmail.com" class="contact-email">dallashycontact@gmail.com</a></p>
             <p><i class="fas fa-globe"></i> <span data-i18n="contact_available">Disponível para projetos e colaborações.</span></p>
